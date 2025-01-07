@@ -16,9 +16,6 @@ return {
       inactive_bg = '#2c3043',
     }
 
-    vim.keymap.set('n', '<Tab>', '<cmd>:bnext<CR>', { desc = 'Next tab' })
-    vim.keymap.set('n', '<S-Tab>', '<cmd>:bprevious<CR>', { desc = 'Prev tab' })
-
     local my_lualine_theme = {
       normal = {
         a = { bg = colors.blue, fg = colors.bg, gui = 'bold' },
@@ -57,7 +54,6 @@ return {
         theme = my_lualine_theme,
       },
       sections = {
-        lualine_c = { 'buffers' },
         lualine_x = {
           {
             lazy_status.updates,
