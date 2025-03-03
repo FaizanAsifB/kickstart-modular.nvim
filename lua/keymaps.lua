@@ -9,8 +9,8 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- local map = vim.keymap.set
 
 -- Keep cursor centered when scrolling
-vim.keymap.set('n', '<C-d>', '<C-d>zz', { noremap = true, silent = true })
-vim.keymap.set('n', '<C-u>', '<C-u>zz', { noremap = true, silent = true })
+vim.keymap.set('n', '<C-d>', '<C-d>zz')
+vim.keymap.set('n', '<C-u>', '<C-u>zz')
 
 -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
 -- or just use <C-\><C-n> to exit terminal mode

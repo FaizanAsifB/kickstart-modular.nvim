@@ -29,7 +29,9 @@ require('lazy').setup({
   require 'plugins/lspconfig',
   require 'plugins/conform',
   require 'plugins/cmp',
-  require 'plugins/rose-pine',
+  -- require 'plugins/rose-pine',
+  -- require 'plugins/tokyonight',
+  require 'plugins/catppuccin',
   require 'plugins/todo-comments',
   require 'plugins/mini',
   require 'plugins/treesitter',
@@ -39,6 +41,10 @@ require('lazy').setup({
   require 'plugins/session',
   require 'plugins/oil',
   require 'plugins/noice',
+  require 'plugins/harpoon',
+  require 'plugins/undotree',
+  require 'plugins/ts-comments',
+  require 'plugins/tailwind-colors',
 
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
@@ -50,7 +56,7 @@ require('lazy').setup({
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
   -- require 'kickstart.plugins.debug',
-  -- require 'kickstart.plugins.indent_line',
+  require 'plugins.indent_line',
   -- require 'kickstart.plugins.lint',
   require 'plugins.autopairs',
   require 'plugins.neo-tree',

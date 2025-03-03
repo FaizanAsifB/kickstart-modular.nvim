@@ -19,12 +19,12 @@ return {
           -- `friendly-snippets` contains a variety of premade snippets.
           --    See the README about individual language/framework/plugin snippets:
           --    https://github.com/rafamadriz/friendly-snippets
-          -- {
-          --   'rafamadriz/friendly-snippets',
-          --   config = function()
-          --     require('luasnip.loaders.from_vscode').lazy_load()
-          --   end,
-          -- },
+          {
+            'rafamadriz/friendly-snippets',
+            config = function()
+              require('luasnip.loaders.from_vscode').lazy_load()
+            end,
+          },
         },
       },
       'saadparwaiz1/cmp_luasnip',
@@ -34,6 +34,8 @@ return {
       --  into multiple repos for maintenance purposes.
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-path',
+      'hrsh7th/cmp-buffer',
+      'hrsh7th/cmp-cmdline',
     },
     config = function()
       -- See `:help cmp`
@@ -48,7 +50,9 @@ return {
           end,
         },
         completion = { completeopt = 'menu,menuone,noinsert' },
-
+        formatting = {
+          format = require('tailwindcss-colorizer-cmp').formatter,
+        },
         window = {
           completion = cmp.config.window.bordered(),
           documentation = cmp.config.window.bordered(),
@@ -114,6 +118,23 @@ return {
           { name = 'path' },
         },
       }
+
+      cmp.setup.cmdline('/', {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = {
+          { name = 'buffer' },
+        },
+      })
+
+      cmp.setup.cmdline(':', {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = cmp.config.sources({
+          { name = 'path' },
+        }, {
+          { name = 'cmdline' },
+        }),
+        matching = { disallow_symbol_nonprefix_matching = false },
+      })
     end,
   },
 }
